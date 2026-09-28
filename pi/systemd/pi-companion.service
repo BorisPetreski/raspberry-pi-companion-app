@@ -1,0 +1,30 @@
+[Unit]
+Description=Pi Companion local device agent
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi-companion
+Group=pi-companion
+SupplementaryGroups=audio
+EnvironmentFile=-/etc/pi-companion.env
+WorkingDirectory=/opt/pi-companion/pi
+ExecStart=/usr/bin/python3 -m companion_agent serve
+Restart=on-failure
+RestartSec=3
+RuntimeDirectory=pi-companion
+RuntimeDirectoryMode=0750
+StateDirectory=pi-companion
+StateDirectoryMode=0750
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ReadWritePaths=/var/lib/pi-companion /run/pi-companion
+
+[Install]
+WantedBy=multi-user.target
