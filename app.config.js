@@ -40,6 +40,7 @@ module.exports = {
       'expo-router',
       'expo-font',
       'expo-secure-store',
+      'expo-status-bar',
       [
         'expo-build-properties',
         {

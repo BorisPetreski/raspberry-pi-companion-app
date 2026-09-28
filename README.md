@@ -32,7 +32,7 @@ The Pi owns device state. The app owns only the endpoint and bearer token. The p
 
 ## Run the app
 
-Requirements: Node.js 20 or newer and an Expo-compatible Android/iOS development environment.
+Requirements: Node.js 22.13 or newer and an Expo-compatible Android/iOS development environment. This matches the [Expo SDK 57 compatibility table](https://docs.expo.dev/versions/latest/).
 
 ```bash
 npm install
